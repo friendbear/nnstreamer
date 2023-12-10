@@ -1,11 +1,13 @@
 ---
 title: How to contribute
-...
+---
 
-# How to Contribute
+## How to Contribute
 
-## Coding Convention
+### Coding Convention
+
 Consistent code conventions are important for several reasons:
+
 * *Most importantly:* To make it easy to read and understand the code. Remember: you may be the only one writing the code initially, but many people will need to read, understand, modify, and fix the code over its lifetime. These conventions attempt to make this task much easier. If the code consistently follows these standards, it improves developer understanding across the entire source base.
 * To make it easy to debug the code, with both a system call tracer and GNU debuggers. It should be easy to set breakpoints, view locals, and display and view data structures.
 * To attempt to improve code quality through consistency, and requiring patterns that are less likely to result in bugs either initially, or after code modification.
@@ -28,7 +30,8 @@ However, even if you are not a reviewer (designated by committer or submitter), 
 
 The submitter has the first responsibility of keeping the created PR clean and neat (rebase whenever there are merge conflicts), following up the feedback, testing when needed.
 
-### Additional requirements for codes
+### Additional requirements for codesa
+
 * Each feature should come with a rich set of test cases that can be executed as unit tests during build. If the feature is more invasive or richer, you need more and richer test cases. Refer to other test cases in /tests directory, which use either GTest or SSAT.
 * When new test cases are introduced, the number of new negative test cases should be larger than or equal to the number of new positive test cases.
 * For C-code, try to stick with C89.
@@ -40,19 +43,19 @@ The submitter has the first responsibility of keeping the created PR clean and n
 ### Merge Criteria
 
 A PR is required to meet the following criteria.
+
 * It has passed all the tests defined for TAOS-CI.
-    - This includes unit tests and integration tests in various platforms and different static analysis tools.
-    - Note that one of the tests includes the "Signed-off-by" check, which means that the author has agreed with [Code of Conduct](../CODE_OF_CONDUCT.md). You may need to refer to later section.
+  * This includes unit tests and integration tests in various platforms and different static analysis tools.
+  * Note that one of the tests includes the "Signed-off-by" check, which means that the author has agreed with [Code of Conduct](../CODE_OF_CONDUCT.md). You may need to refer to later section.
 * At least TWO committers (reviewers with voting rights, elected by TSC or other committers) have approved the PR.
-    - This is a necessary condition, not sufficient.
-    - If the PR touches sensitive codes or may affect wide ranges of components, reviewers will wait for other reviewers to back them up.
-    - If the PR is messy, you will need to wait indefinitely to get reviews.
+  * This is a necessary condition, not sufficient.
+  * If the PR touches sensitive codes or may affect wide ranges of components, reviewers will wait for other reviewers to back them up.
+  * If the PR is messy, you will need to wait indefinitely to get reviews.
         - Apply general rules of git commits and common senses.
         - Do not write a lengthy commit. Apply a single commit per PR if you are new to the community. Have a single topic per commit. Provide enough background information and references. And so on.
 * There is no rejections from any official reviewers.
 * There is no pending negative feedbacks (unresolved issues) from reviewers.
 * A committer with merging privilege will, then, be able to merge the given PR.
-
 
 ## Signing off commits
 
@@ -60,7 +63,8 @@ Each commit is required to be signed-off by the corresponding author.
 With properly configured development environment, you can add sign-off for a commit with ```-s``` option: e.g., ```git commit -s```.
 [Here is some stories on sign-off](https://stackoverflow.com/questions/1962094/what-is-the-sign-off-feature-in-git-for)
 
-- How to give the developers zero cost:
+* How to give the developers zero cost:
+
 ```bash
 $ vi ~/.gitconfig
   [user]
@@ -72,7 +76,8 @@ $ git commit -s <file-name>
 
 ### What does it mean to sign off commits for authors?
 
-Including a "Signed-off-by:" tag in your commit means that you are making the Developer Certificate of Origin (DCO) certification for that commit. A copy of the DCO text can be found at https://developercertificate.org/
+Including a "Signed-off-by:" tag in your commit means that you are making the Developer Certificate of Origin (DCO) certification for that commit. A copy of the DCO text can be found at <https://developercertificate.org/>
 
 ## How to contribute to GStreamer community
-* https://gstreamer.freedesktop.org/documentation/contribute/index.html
+
+* <https://gstreamer.freedesktop.org/documentation/contribute/index.html>

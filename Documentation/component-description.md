@@ -1,8 +1,8 @@
 ---
 title: Component description
-...
+---
 
-# Gstreamer Stream Data Types
+## Gstreamer Stream Data Types
 
 - other/tensor (obsolete! use ```other/tensors,num_tensors=1``` instead)
 - other/tensors
@@ -11,7 +11,7 @@ Each frame of an ```other/tensor``` or ```other/tensors``` stream should have on
 
 Except ```tensor_decoder```, which accepts data semantics from pipeline developers, and ```tensor_converter```, which accepts data semantics from sink pad caps, every NNStreamer tensor plugin and tensor stream should be agnostic to the data semantics. With data semantics, we know whether the corresponding tensor denotes for video, audio, text, or any other "meaningful data types". The NNStreamer elements and data-pipeline, being agnostic to such semantics, should treat every other/tensor and other/tensors as multi-dimensional arrays of general numbers. This allows inter-operability between different neural network models and frameworks. The semantics of tensors should be handled and encapsulated by their direct accessors: the pipeline writer (or the application) and the corresponding framework (and its subplugin).
 
-# Gstreamer Elements (Plugins)
+## Gstreamer Elements (Plugins)
 
 Note that "stable" does not mean that it is complete. It means that it has enough test cases and complies with the overall design; thus, "stable" features probably won't be modified extensively. Features marked "experimental" can be modified extensively due to its incomplete design and implementation or crudeness. "Planned" is still in the works so it will be released soon.
 
@@ -51,7 +51,7 @@ In this page, we focus on the status of each elements. For requirements and desi
   - Custom Native Functions (stable) (Supply custom-filter in run-time)
   - Tensorflow (stable) (1.09, 1.13, 2.3, 2.7, 2.8 tested)
   - Tensorflow-lite (stable) (1.09, 1.13, 2.3, 2.7, 2.8 tested)
-      - For tensorflow-lite version 2.x, use ```tensorflow2-lite``` as the subplugin name, which allows to use both tensorflow-lite 1.x and 2.x simultaneously in a pipeline.
+    - For tensorflow-lite version 2.x, use ```tensorflow2-lite``` as the subplugin name, which allows to use both tensorflow-lite 1.x and 2.x simultaneously in a pipeline.
   - Caffe2 (stable)
   - PyTorch (stable)
   - TVM (stable)
@@ -85,7 +85,7 @@ In this page, we focus on the status of each elements. For requirements and desi
     - Direct video conversion (video/x-raw) (stable)
     - Image classification labeling (text/x-raw) (stable)
     - Bounding boxes (video/x-raw) (stable)
-        - This supports different standards, which can be configured at run-time.
+      - This supports different standards, which can be configured at run-time.
     - Image segmentation (video/x-raw) (stable) and depth
     - Body pose (video/x-raw) (stable)
     - Flatbuf (stable)
@@ -150,7 +150,6 @@ In this page, we focus on the status of each elements. For requirements and desi
 - [android supports](https://github.com/nnstreamer/nnstreamer/tree/main/ext/nnstreamer/android_source) (stable)
   - This element allows to accept data streams from Android's media framework.
 
-
 Elements that do not deal with ```other/tensors``` streams, but are in this repo:
 
 - [join](https://github.com/nnstreamer/nnstreamer/tree/main/gst/join) (stable)
@@ -162,8 +161,8 @@ Elements that do not deal with ```other/tensors``` streams, but are in this repo
   - This element sends tensor stream data via MQTT protocol.
   - With "mqtt-hybrid" mode, data streams (TCP/direct) can be separated from control streams (MQTT) to increase data throughput.
 
-
 Elements dealing with ```other/tensors``` streams, but are in a different repo:
+
 - [tensor\_ros\_sink](https://github.com/nnstreamer/nnstreamer-ros) (stable for ROS1/ROS2)
   - You may send tensor streams via ROS pub/sub structure.
 - [tensor\_ros\_src](https://github.com/nnstreamer/nnstreamer-ros) (stable for ROS1/ROS2)
@@ -171,9 +170,8 @@ Elements dealing with ```other/tensors``` streams, but are in a different repo:
 
 Note that test elements in /tests/ are not elements for applications. They exist as scaffoldings to test the above elements especially in the case where related elements are not yet implemented.
 
+## Other Components
 
-
-# Other Components
 - CI ([@AWS](http://ci.nnstreamer.ai/nnstreamer/ci/taos)) (stable): Up and Running.
 - CD
   - Tizen (since 5.5 M1) [Package Download](https://download.tizen.org/snapshots/TIZEN/Tizen/Tizen-Unified/latest/repos/standard/packages/) [Build & Release Infra](https://build.tizen.org/project/show/Tizen:Unified)

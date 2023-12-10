@@ -1,9 +1,10 @@
-
+---
 ---
 # [Template] PR Description
 
 In general, github system automatically copies your commit message for your convenience.
 Please remove unused part of the template after writing your own PR description with this template.
+
 ```bash
 $ git commit -s filename1 filename2 ... [enter]
 
@@ -37,4 +38,3 @@ Add signed-off message automatically by running **$git commit -s ...** command.
 
 $ git push origin <your_branch_name>
 ```
-

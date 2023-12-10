@@ -30,14 +30,15 @@ NNstreamer team will confirm your request and within 2 week will try to prepare 
 When a person responsible for security receives a vulnerability report as previously mentioned, it is assigned the highest priority and the person in charge. This person will coordinate the patch and release process.
 
 Actions that must be made by the NNStreamer team.
-  * Confirm the problem and identify the affected versions.
-  * Check the code to find any similar problems.
-  * Prepare fixes for all releases still in maintenance. These fixes will
-    released as quickly as possible.
+
+* Confirm the problem and identify the affected versions.
+* Check the code to find any similar problems.
+* Prepare fixes for all releases still in maintenance. These fixes will
+  released as quickly as possible.
 
 We suggest the following format when disclosing vulnerabilities:
 
-  * Your name and email.
-  * Include scope of vulnerability. Let us know who could use this exploit.
-  * Document steps to identify the vulnerability. It is important that we can reproduce your findings. 
-  * How to exploit vulnerability, give us an attack scenario.
+* Your name and email.
+* Include scope of vulnerability. Let us know who could use this exploit.
+* Document steps to identify the vulnerability. It is important that we can reproduce your findings. 
+* How to exploit vulnerability, give us an attack scenario.

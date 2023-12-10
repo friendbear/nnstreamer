@@ -1,7 +1,6 @@
 ---
 title: API reference
-...
-
+---
 
 ### [NNStreamer Doxygen book](http://ci.nnstreamer.ai/nnstreamer/html/index.html)
 
@@ -31,8 +30,8 @@ The subdomains have the same roles as in Native APIs.
 This API's main target is Tizen, but it supports other OS as well.
 
 - [Implementation](https://github.com/Samsung/TizenFX/tree/master/src/Tizen.MachineLearning.Inference)
-    - Single API: Tizen 5.5 M2
-    - Pipeline API: Tizen 6.0 M1
+  - Single API: Tizen 5.5 M2
+  - Pipeline API: Tizen 6.0 M1
 
 ### [Tizen Machine-Learning Web API reference](https://docs.tizen.org/application/web/guides/machine-learning/overview/)
 
@@ -40,18 +39,17 @@ If you are writing Tizen web applications along with neural network inferences, 
 The subdomains have the same roles as in Native APIs.
 
 - Web API (HTML5) (stable, since Tizen 6.5 M2)
-    - [Implementation](https://git.tizen.org/cgit/platform/core/api/webapi-plugins/tree/src/ml?h=tizen) Tizen Web API
+  - [Implementation](https://git.tizen.org/cgit/platform/core/api/webapi-plugins/tree/src/ml?h=tizen) Tizen Web API
 
 ### [Android Java API reference](http://ci.nnstreamer.ai/nnstreamer/ci/daily-build/build_result/latest/java_html/index.html)
 
 We provide Java APIs for Android applications.
 Note that this supports SingleShot/Pipeline subdomains and do not include training or ML-service capabilities.
 
-
 - [Android sample app](https://github.com/nnstreamer/nnstreamer-example/tree/master/android/example_app/api-sample) uses JAVA APIs to implement Android-NNStreamer apps.
-    - Note that the Android Sample Applications published via Google Play Store, [Source Code](https://github.com/nnstreamer/nnstreamer-example/tree/main/android/example_app), are developed before NNStreamer Java API. They use GStreamer functions.
+  - Note that the Android Sample Applications published via Google Play Store, [Source Code](https://github.com/nnstreamer/nnstreamer-example/tree/main/android/example_app), are developed before NNStreamer Java API. They use GStreamer functions.
 - [Implementation](https://github.com/nnstreamer/api/tree/main/java) (stable)
 - [Available at JCenter](https://bintray.com/beta/#/nnsuite/nnstreamer?tab=packages)
 
-
 ### Python API is planned
+

@@ -1,13 +1,15 @@
 ---
 title: T3. Edge pipeline - MQTT
-...
+---
 
-# Tutorial 3. Edge pipeline - MQTT
+## Tutorial 3. Edge pipeline - MQTT
+
 The publisher sends a video stream to the broker (in this tutorial, use mosquitto) with the topic designated by the user.  
 Subscriber receives video streams from the broker and run object detection.  
 
-## Prerequisites
-```
+### Prerequisites
+
+```bash
 # install mqtt broker
 $ sudo apt install mosquitto mosquitto-clients
 # install mqtt elements
@@ -15,21 +17,29 @@ $ sudo apt install nnstreamer-misc
 ```
 
 ## Run pipeline. (video streaming)
+
 Before starting object detection, let's construct a simple pipeline using mqtt.
-### Publisher pipeline.
+
+### Publisher pipeline
+
+```bash
+gst-launch-1.0 videotestsrc is-live=true ! video/x-raw,format=RGB,width=640,height=480,framerate=5/1 ! mqttsink pub-topic=test/videotestsrc
 ```
-$ gst-launch-1.0 videotestsrc is-live=true ! video/x-raw,format=RGB,width=640,height=480,framerate=5/1 ! mqttsink pub-topic=test/videotestsrc
-```
-### Subscriber pipeline.
-```
-$ gst-launch-1.0 mqttsrc sub-topic=test/videotestsrc ! video/x-raw,format=RGB,width=640,height=480,framerate=5/1 ! videoconvert ! ximagesink
+
+### Subscriber pipeline
+
+```bash
+gst-launch-1.0 mqttsrc sub-topic=test/videotestsrc ! video/x-raw,format=RGB,width=640,height=480,framerate=5/1 ! videoconvert ! ximagesink
 ```
 
 If you succeeded in streaming the video using mqtt, let's run the object detection.
+
 ## Run pipeline. (Object detection)
-### Publisher pipeline.
-```
-$ gst-launch-1.0 v4l2src ! videoconvert ! videoscale ! video/x-raw,format=RGB,width=640,height=480,framerate=5/1 ! mqttsink pub-topic=example/objectDetection
+
+### Publisher pipeline
+
+```bash
+gst-launch-1.0 v4l2src ! videoconvert ! videoscale ! video/x-raw,format=RGB,width=640,height=480,framerate=5/1 ! mqttsink pub-topic=example/objectDetection
 ```
 
 ### Subscriber pipeline.
